@@ -17,7 +17,7 @@ From the [libfuse description](https://github.com/libfuse/libfuse/blob/master/RE
 > module.
 
 EGA-QuickView is a combination of
-[sshfs](https://github.com/libfuse/sshfs) and
+[sshfs](https://github.com/osxfuse/sshfs) and
 [crypt4ghfs](https://github.com/EGA-archive/crypt4ghfs). That is, we
 communicate with the EGA distribution servers over ssh, download files
 (chunk by chunk) in Crypt4GH format and decrypt them transparently.
@@ -39,6 +39,13 @@ You can then compile the EGA-qv code with:
 	autoreconf -i
 	./configure --with-openssl=$(brew --prefix openssl@1.1)
 	make
+
+> When installing [macFuse](https://osxfuse.github.io/), you will be
+> asked to reboot.  This is expected, as it installs the kernel
+> module. Moreover, [MacOS software is
+> signed](https://developer.apple.com/developer-id/), so you will need
+> to accept it in the `System Preferences > Security & Privacy`
+> section.
 
 ## Example
 
